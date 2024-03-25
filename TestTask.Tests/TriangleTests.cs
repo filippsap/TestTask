@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using TestTask.Figures;
 
 namespace TestTask.Tests;
 
@@ -6,18 +7,18 @@ public class TriangleTests
 {
 
     [Test]
-    public void TriangleNegativeValues()
+    public void NegativeLengths()
     {
-        Assert.Throws<ArgumentException>(() => new Triangle(-10, 0, 0));
-        Assert.Throws<ArgumentException>(() => new Triangle(0, -10, 0));
-        Assert.Throws<ArgumentException>(() => new Triangle(0, 0, -10));
-        Assert.Throws<ArgumentException>(() => new Triangle(-10, -10, -10));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(-10, 0, 0));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(0, -10, 0));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(0, 0, -10));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(-10, -10, -10));
     }
 
     [Test]
-    public void ImpossibleTriangle()
+    public void ImpossibleLengths()
     {
-        Assert.Throws<ArgumentException>(() => new Triangle(50,4,10));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(50,4,10));
     }
 
     [Test]
@@ -27,7 +28,7 @@ public class TriangleTests
         var triangle = new Triangle(5, 14, 13);
 
         //Act
-        var triangleSquare = triangle.ÑalculationArea();
+        var triangleSquare = triangle.ÑalculationArea;
 
         //Assert
         Assert.That(triangleSquare, Is.EqualTo(32.5));
