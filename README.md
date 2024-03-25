@@ -41,14 +41,12 @@ CREATE TABLE ProductCategory
     CategoryId int,
 )
 
-INSERT 
-INTO Category
+INSERT INTO Category
 VALUES
     ('Продукты питания'),
     ('Лекарства')
 
-INSERT 
-INTO Product
+INSERT INTO Product
 VALUES
     (''),
     ('Молоко'),
