@@ -14,10 +14,10 @@ public class Circle : IFigure
     public Circle(double radius)
     {
         Radius = radius;
-        IsValid();
+        Validation();
     }
 
-    private void IsValid()
+    private void Validation()
     {
         if (Radius < 0) throw new ArgumentOutOfRangeException("Радиус круга не может быть меньше нуля");
     }
